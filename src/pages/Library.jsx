@@ -9,6 +9,7 @@ function Library() {
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(true);
 
+  // Simulate async loading
   useEffect(() => {
     setTimeout(() => {
       setResourcesData(resources);

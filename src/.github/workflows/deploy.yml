@@ -2,7 +2,7 @@ name: Deploy React App to GitHub Pages
 
 on:
   push:
-    branches: [ main ]   # change to master if needed
+    branches: [ main ]
 
 permissions:
   contents: read
@@ -28,13 +28,16 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Create 404.html for GitHub Pages routing
+        run: cp dist/index.html dist/404.html
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./build
+          path: ./dist
 
       - name: Deploy to Pages
         uses: actions/deploy-pages@v4

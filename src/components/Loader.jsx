@@ -1,5 +1,5 @@
 function Loader() {
-  return <p className="message">Loading resources...</p>;
+  return <p>Loading resources...</p>;
 }
 
 export default Loader;
